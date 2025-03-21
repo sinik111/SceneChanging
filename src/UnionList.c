@@ -102,6 +102,7 @@ Node* Remove(List* list, long long id)
 
 	while (current_node != NULL)
 	{
+		// type 확인 필요없이 data의 id만 비교
 		if (current_node->data.id == id)
 		{
 			Node* next_node;
@@ -117,7 +118,7 @@ Node* Remove(List* list, long long id)
 
 			free(current_node);
 
-			return next_node;
+			return next_node; // 삭제 후에 순회할 수 있게 다음 노드 반환함
 		}
 
 		prev_node = current_node;

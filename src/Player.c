@@ -25,8 +25,8 @@ Player* CreatePlayer()
 	player->id = GenerateID();
 	vec2 pos = { 0.0f, (float)ScreenHeight() / 2 };
 	player->position = pos;
-	player->x_speed = 40.0f;
-	player->y_speed = 20.0f;
+	player->x_speed = 60.0f;
+	player->y_speed = 30.0f;
 	wmemcpy_s(player->shape, 2, L"▶", 2);
 	
 	return player;

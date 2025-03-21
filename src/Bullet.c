@@ -21,7 +21,7 @@ void UpdateBullet(Bullet* bullet)
 {
 	vec2 transition = ScalarMulVector2(&bullet->direction, 2, bullet->speed, DeltaTime());
 	bullet->position = AddVector2(&bullet->position, &transition);
-	bullet->timer -= DeltaTime();
+	bullet->timer -= DeltaTime(); // 자동 삭제 되도록 타이머 시간 감소.
 }
 
 void RenderBullet(Bullet* bullet)
