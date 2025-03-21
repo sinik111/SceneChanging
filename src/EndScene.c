@@ -7,26 +7,26 @@
 #include "MyTime.h"
 
 wchar_t end_data[10];
-float timer;
+float end_timer;
 
 void InitializeEndScene()
 {
 	wmemset(end_data, 0, 10);
 	wmemcpy_s(end_data, 4, L"end5", 4);
 
-	timer = 0.0f;
+	end_timer = 0.0f;
 }
 
 void UpdateEndScene()
 {
-	timer += DeltaTime();
+	end_timer += DeltaTime();
 
-	if (timer >= 5.0f)
+	if (end_timer >= 5.0f)
 	{
 		ChangeScene(MENU);
 	}
 
-	for (int i = 0; i < (int)timer; ++i)
+	for (int i = 0; i < (int)end_timer; ++i)
 	{
 		end_data[3 + i] = L'.';
 		end_data[3 + i + 1] = L'4' - i;

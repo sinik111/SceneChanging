@@ -98,8 +98,6 @@ void UpdateGame()
     UpdateScene();
 }
 
-
-
 void RenderGame()
 {
     ScreenClear();

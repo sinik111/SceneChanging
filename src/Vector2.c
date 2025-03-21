@@ -84,6 +84,16 @@ Vector2 ScalarMulVector2(const Vector2* v_in, int count, ...)
 	return v;
 }
 
+// v_in의 x, y에 scalar를 곱한 벡터를 반환함
+Vector2 ScalarMulVector2S(const Vector2* v_in, float scalar)
+{
+	Vector2 v = { v_in->x, v_in->y };
+	v.x *= scalar;
+	v.y *= scalar;
+
+	return v;
+}
+
 // v1_in <-- v2_in 의 방향 벡터를 반환함
 Vector2 MakeDirectionVector2(const Vector2* v1_in, const Vector2* v2_in)
 {

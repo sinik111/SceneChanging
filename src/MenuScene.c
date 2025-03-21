@@ -9,7 +9,7 @@
 
 wchar_t menu_data[5][25];
 List* msbg_list = NULL; // menu_scene_background_list
-float timer;
+float star_timer;
 
 void InitializeMenuScene()
 {
@@ -21,16 +21,16 @@ void InitializeMenuScene()
 	wmemcpy_s(menu_data[4], 25, L"press space to countinue", 25);
 	
 	msbg_list = CreateList(MENU_SCENE_BACKGROUND);
-	timer = 0.0f;
+	star_timer = 0.0f;
 }
 
 void UpdateMenuScene()
 {
-	timer += DeltaTime();
+	star_timer += DeltaTime();
 
-	if (timer > 0.2f)
+	if (star_timer > 0.2f)
 	{
-		timer -= 0.2f;
+		star_timer -= 0.2f;
 
 		MenuSceneBackground msbg;
 		CreateMenuSceneBackground(&msbg);

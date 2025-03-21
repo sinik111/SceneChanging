@@ -98,6 +98,26 @@ void Translate(Player* player)
 	vec2 transition = ScalarMulVector2(&direction, 1, DeltaTime());
 
 	player->position = AddVector2(&player->position, &transition);
+
+	if (player->position.x < 0)
+	{
+		player->position.x = 0;
+	}
+
+	if (player->position.y < 0)
+	{
+		player->position.y = 0;
+	}
+
+	if (player->position.x > ScreenWidth() - 1)
+	{
+		player->position.x = (float)ScreenWidth() - 1;
+	}
+
+	if (player->position.y > ScreenHeight() - 1)
+	{
+		player->position.y = (float)ScreenHeight() - 1;
+	}
 }
 
 void Fire(Player* player)

@@ -27,6 +27,11 @@ int UpdateMenuSceneBackground(MenuSceneBackground* msbg)
 {
 	msbg->acceleration = 4 * (msbg->indicator) * (msbg->indicator) + 1;
 	Vector2 r = ScalarMulVector2(&msbg->direction, 3, msbg->speed, msbg->acceleration, DeltaTime());
+
+	/*Vector2 r = ScalarMulVector2S(&msbg->direction, msbg->speed);
+	r = ScalarMulVector2S(&r, msbg->acceleration);
+	r = ScalarMulVector2S(&r, DeltaTime());*/
+
 	msbg->position = AddVector2(&msbg->position, &r);
 	if (msbg->indicator < 1)
 	{
