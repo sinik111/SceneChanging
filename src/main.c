@@ -1,8 +1,12 @@
-//#define MEMORY_LEAK_CHECK // 메모리 누수 체크. 해당 줄 주석 처리하면 체크 안함.
+#ifdef _DEBUG
+#define MEMORY_LEAK_CHECK // 메모리 누수 체크. 해당 줄 주석 처리하면 체크 안함.
+
 #ifdef MEMORY_LEAK_CHECK
 #define _CRTDBG_MAP_ALLOC
 #include <crtdbg.h>
-#endif
+
+#endif // MEMORY_LEAK_CHECK
+#endif // _DEBUG
 
 #include <stdlib.h>
 

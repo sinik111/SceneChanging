@@ -54,3 +54,4 @@ dkms.conf
 *.log
 *.recipe
 /.vs/SceneChanging
+/SceneChanging/x64/Release
