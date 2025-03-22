@@ -135,6 +135,7 @@
     <ClInclude Include="inc\Game.h" />
     <ClInclude Include="inc\Global.h" />
     <ClInclude Include="inc\Input.h" />
+    <ClInclude Include="inc\MemoryLeakCheck.h" />
     <ClInclude Include="inc\MenuScene.h" />
     <ClInclude Include="inc\MenuSceneBackground.h" />
     <ClInclude Include="inc\MyTime.h" />
@@ -157,6 +158,7 @@
     <ClCompile Include="src\MyTime.c" />
     <ClCompile Include="src\Player.c" />
     <ClCompile Include="src\PlayScene.c" />
+    <ClCompile Include="src\RenderingLayer_Experiment.c" />
     <ClCompile Include="src\UnionList.c" />
     <ClCompile Include="src\Vector2.c" />
   </ItemGroup>
