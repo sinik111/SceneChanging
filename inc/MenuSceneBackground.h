@@ -13,8 +13,8 @@ typedef enum MenuSceneBackgroundState
 typedef struct MenuSceneBackground
 {
 	long long id;
-	vec2 position;
-	vec2 direction;
+	Vector2 position;
+	Vector2 direction;
 	float speed;
 	float acceleration;
 	float indicator;

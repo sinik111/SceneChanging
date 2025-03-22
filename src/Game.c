@@ -1,8 +1,7 @@
 #include "Game.h"
 
-#include <windows.h>
 #include <stdio.h>
-#include <memory.h>
+#include <wchar.h>
 
 #include "ConsoleRenderer.h"
 #include "Input.h"
@@ -13,6 +12,9 @@
 #include "MyTime.h"
 
 #define CHECK_FPS
+
+#define VK_ESCAPE         0x1B
+#define VK_SPACE          0x20
 
 #ifdef CHECK_FPS
 int frame_count = 0;
@@ -126,6 +128,8 @@ void ChangeScene(Scene scene)
 #ifdef CHECK_FPS
 void CheckFPS()
 {
+    ++frame_count;
+
     frame_timer += DeltaTime();
     if (frame_timer > 1.0f)
     {
@@ -134,7 +138,6 @@ void CheckFPS()
         frame_timer -= 1.0f;
         frame_count = 0;
     }
-    ++frame_count;
 
     ScreenDrawString(0, 0, fps_buffer, FG_YELLOW);
 }

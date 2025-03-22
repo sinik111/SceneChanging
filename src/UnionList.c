@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <memory.h>
-#include <string.h>
+
+#include "Types.h"
 
 List* CreateList(DataType type)
 {
@@ -16,6 +17,7 @@ List* CreateList(DataType type)
 	}
 
 	list->head = NULL;
+	list->tail = NULL;
 	list->type = type;
 
 	return list;
@@ -147,4 +149,7 @@ void ClearList(List* list)
 
 		current_node = temp;
 	}
+
+	list->head = NULL;
+	list->tail = NULL;
 }

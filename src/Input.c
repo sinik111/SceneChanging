@@ -1,5 +1,6 @@
 #include "Input.h"
 
+#include <windows.h> // GetAsyncKeyState »ç¿ë
 #include <memory.h>
 
 SHORT key_state[256] = { 0 };

@@ -1,12 +1,10 @@
 #include "MenuSceneBackground.h"
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <wchar.h>
 
 #include "MyTime.h"
 #include "ConsoleRenderer.h"
-#include "UnionList.h"
 #include "Global.h"
 #include "Vector2.h"
 
@@ -14,7 +12,7 @@ void CreateMenuSceneBackground(MenuSceneBackground* msbg)
 {
 	msbg->id = GenerateID();
 	msbg->position.x = (float)ScreenWidth();
-	msbg->position.y = (float)(rand() % (ScreenHeight() + 1));
+	msbg->position.y = (float)(rand() % ScreenHeight());
 	msbg->direction.x = -1.0f;
 	msbg->direction.y = 0.0f;
 	msbg->speed = 20.0f;
@@ -26,11 +24,11 @@ void CreateMenuSceneBackground(MenuSceneBackground* msbg)
 int UpdateMenuSceneBackground(MenuSceneBackground* msbg)
 {
 	msbg->acceleration = 4 * (msbg->indicator) * (msbg->indicator) + 1;
-	Vector2 r = ScalarMulVector2(&msbg->direction, 3, msbg->speed, msbg->acceleration, DeltaTime());
+	Vector2 r = ScalarMulVector2Args(&msbg->direction, 3, msbg->speed, msbg->acceleration, DeltaTime());
 
-	/*Vector2 r = ScalarMulVector2S(&msbg->direction, msbg->speed);
-	r = ScalarMulVector2S(&r, msbg->acceleration);
-	r = ScalarMulVector2S(&r, DeltaTime());*/
+	/*Vector2 r = ScalarMulVector2(&msbg->direction, msbg->speed);
+	r = ScalarMulVector2(&r, msbg->acceleration);
+	r = ScalarMulVector2(&r, DeltaTime());*/
 
 	msbg->position = AddVector2(&msbg->position, &r);
 	if (msbg->indicator < 1)

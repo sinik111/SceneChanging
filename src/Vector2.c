@@ -61,7 +61,7 @@ Vector2 SubVector2(const Vector2* v1_in, const Vector2* v2_in)
 
 // count에 가변인자 개수, 가변인자에 float 사용
 // v_in의 x, y에 각 인자를 곱한 벡터를 반환함
-Vector2 ScalarMulVector2(const Vector2* v_in, int count, ...)
+Vector2 ScalarMulVector2Args(const Vector2* v_in, int count, ...)
 {
 	Vector2 v = { v_in->x, v_in->y };
 
@@ -85,7 +85,7 @@ Vector2 ScalarMulVector2(const Vector2* v_in, int count, ...)
 }
 
 // v_in의 x, y에 scalar를 곱한 벡터를 반환함
-Vector2 ScalarMulVector2S(const Vector2* v_in, float scalar)
+Vector2 ScalarMulVector2(const Vector2* v_in, float scalar)
 {
 	Vector2 v = { v_in->x, v_in->y };
 	v.x *= scalar;

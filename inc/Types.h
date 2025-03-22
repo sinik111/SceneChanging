@@ -1,5 +1,9 @@
 #pragma once
 
+typedef int BOOL;
+typedef short SHORT;
+typedef unsigned short WORD;
+
 typedef enum DataType
 {
 	MENU_SCENE_BACKGROUND,

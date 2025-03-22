@@ -14,6 +14,6 @@ void UpdateGame();
 
 void RenderGame();
 
-void ReleaseGame(void);
+void ReleaseGame();
 
 void ChangeScene(Scene scene);

@@ -4,6 +4,7 @@
 #include <wchar.h>
 
 #include "ConsoleRenderer.h"
+#include "MenuSceneBackground.h"
 #include "UnionList.h"
 #include "MyTime.h"
 

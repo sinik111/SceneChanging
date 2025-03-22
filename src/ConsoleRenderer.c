@@ -1,5 +1,6 @@
 #include "ConsoleRenderer.h"
 
+#include <windows.h>
 #include <stdio.h>
 
 HANDLE hConsoleHandle;      // 초기 화면 콘솔의 핸들

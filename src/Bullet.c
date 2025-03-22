@@ -1,11 +1,13 @@
 #include "Bullet.h"
 
 #include <stdlib.h>
+#include <wchar.h>
 
 #include "ConsoleRenderer.h"
 #include "Player.h"
 #include "Global.h"
 #include "MyTime.h"
+#include "Vector2.h"
 
 void CreateBullet(Bullet* bullet, Player* player)
 {
@@ -19,7 +21,7 @@ void CreateBullet(Bullet* bullet, Player* player)
 
 void UpdateBullet(Bullet* bullet)
 {
-	vec2 transition = ScalarMulVector2(&bullet->direction, 2, bullet->speed, DeltaTime());
+	vec2 transition = ScalarMulVector2Args(&bullet->direction, 2, bullet->speed, DeltaTime());
 	bullet->position = AddVector2(&bullet->position, &transition);
 	bullet->timer -= DeltaTime(); // 자동 삭제 되도록 타이머 시간 감소.
 }

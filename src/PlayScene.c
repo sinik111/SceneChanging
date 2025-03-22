@@ -6,6 +6,7 @@
 #include "UnionList.h"
 #include "ConsoleRenderer.h"
 #include "Player.h"
+#include "Types.h"
 
 Player* player = NULL;
 List* bullet_list = NULL;

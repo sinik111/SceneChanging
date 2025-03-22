@@ -4,7 +4,6 @@
 #include "MenuSceneBackground.h"
 #include "Bullet.h"
 
-
 // 리스트에 여러가지 타입들을 담을 수 있게 union을 이용함.
 typedef struct UnionNode
 {

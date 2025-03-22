@@ -1,6 +1,7 @@
 ﻿#include "Player.h"
 
 #include <stdlib.h>
+#include <wchar.h>
 
 #include "Global.h"
 #include "ConsoleRenderer.h"
@@ -8,6 +9,12 @@
 #include "MyTime.h"
 #include "UnionList.h"
 #include "Bullet.h"
+#include "Vector2.h"
+
+#define VK_LEFT           0x25
+#define VK_UP             0x26
+#define VK_RIGHT          0x27
+#define VK_DOWN           0x28
 
 List* player_bullet_list = NULL;
 
@@ -64,9 +71,7 @@ void SetBulletList(List* bullet_list)
 	player_bullet_list = bullet_list;
 }
 
-
 // player 내에서만 쓰는 함수들
-
 void Translate(Player* player)
 {
 	vec2 direction = ZeroVector;
@@ -95,7 +100,7 @@ void Translate(Player* player)
 	direction.x *= player->x_speed;
 	direction.y *= player->y_speed;
 
-	vec2 transition = ScalarMulVector2(&direction, 1, DeltaTime());
+	vec2 transition = ScalarMulVector2(&direction, DeltaTime());
 
 	player->position = AddVector2(&player->position, &transition);
 
