@@ -11,11 +11,6 @@
 #include "Bullet.h"
 #include "Vector2.h"
 
-#define VK_LEFT           0x25
-#define VK_UP             0x26
-#define VK_RIGHT          0x27
-#define VK_DOWN           0x28
-
 static List* player_bullet_list = NULL;
 
 static void Translate(Player* player);
