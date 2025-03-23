@@ -13,96 +13,141 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Scene">
+      <UniqueIdentifier>{2c638439-7a66-4487-baa9-7ae8e772311e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Core">
+      <UniqueIdentifier>{fa5502e0-66f1-4352-95de-c03f41acaaba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object">
+      <UniqueIdentifier>{4f441950-8e68-4a33-8654-348ec4b98a85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Core">
+      <UniqueIdentifier>{584923f2-2a07-44be-8ea6-46d9eaf0869b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Scene">
+      <UniqueIdentifier>{1781ba1c-1bd0-4e95-8b92-c8c73b3c2f7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Object">
+      <UniqueIdentifier>{75b05730-9109-47bd-bce2-0b9f37eb46f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Utility">
+      <UniqueIdentifier>{1fc8d37c-aae6-4cb1-ad3b-22e43cbca07d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Utility">
+      <UniqueIdentifier>{71882ac5-176a-4b05-960e-3038a625eff3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="inc\EndScene.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="inc\Bullet.h">
+      <Filter>헤더 파일\Object</Filter>
     </ClInclude>
-    <ClInclude Include="inc\Game.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\MenuScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\PlayScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\ConsoleRenderer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\Input.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\MyTime.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\MenuSceneBackground.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\UnionList.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\Global.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="inc\Monster.h">
+      <Filter>헤더 파일\Object</Filter>
     </ClInclude>
     <ClInclude Include="inc\Player.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\Object</Filter>
     </ClInclude>
-    <ClInclude Include="inc\Vector2.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="inc\MenuSceneBackground.h">
+      <Filter>헤더 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\MenuScene.h">
+      <Filter>헤더 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\PlayScene.h">
+      <Filter>헤더 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\EndScene.h">
+      <Filter>헤더 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Game.h">
+      <Filter>헤더 파일\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Global.h">
+      <Filter>헤더 파일\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Input.h">
+      <Filter>헤더 파일\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\MyTime.h">
+      <Filter>헤더 파일\Core</Filter>
     </ClInclude>
     <ClInclude Include="inc\Types.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\Core</Filter>
     </ClInclude>
-    <ClInclude Include="inc\Bullet.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="inc\ConsoleRenderer.h">
+      <Filter>헤더 파일\Core</Filter>
     </ClInclude>
-    <ClInclude Include="inc\MemoryLeakCheck.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="inc\Collision.h">
+      <Filter>헤더 파일\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\CircleCollider.h">
+      <Filter>헤더 파일\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\UnionList.h">
+      <Filter>헤더 파일\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Vector2.h">
+      <Filter>헤더 파일\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\DebugUtility.h">
+      <Filter>헤더 파일\Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\EndScene.c">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="src\Bullet.c">
+      <Filter>소스 파일\Object</Filter>
     </ClCompile>
-    <ClCompile Include="src\Game.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="src\main.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="src\MenuScene.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="src\PlayScene.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ConsoleRenderer.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Input.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="src\MyTime.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="src\UnionList.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Global.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Vector2.c">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="src\Monster.c">
+      <Filter>소스 파일\Object</Filter>
     </ClCompile>
     <ClCompile Include="src\Player.c">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Object</Filter>
     </ClCompile>
     <ClCompile Include="src\MenuSceneBackground.c">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Object</Filter>
     </ClCompile>
-    <ClCompile Include="src\Bullet.c">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="src\MenuScene.c">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlayScene.c">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EndScene.c">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.c">
+      <Filter>소스 파일\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Input.c">
+      <Filter>소스 파일\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MyTime.c">
+      <Filter>소스 파일\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConsoleRenderer.c">
+      <Filter>소스 파일\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game.c">
+      <Filter>소스 파일\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Global.c">
+      <Filter>소스 파일\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Collision.c">
+      <Filter>소스 파일\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CircleCollider.c">
+      <Filter>소스 파일\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnionList.c">
+      <Filter>소스 파일\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vector2.c">
+      <Filter>소스 파일\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DebugUtility.c">
+      <Filter>소스 파일\Utility</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -130,14 +130,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="inc\Bullet.h" />
+    <ClInclude Include="inc\CircleCollider.h" />
+    <ClInclude Include="inc\Collision.h" />
     <ClInclude Include="inc\ConsoleRenderer.h" />
     <ClInclude Include="inc\EndScene.h" />
     <ClInclude Include="inc\Game.h" />
     <ClInclude Include="inc\Global.h" />
     <ClInclude Include="inc\Input.h" />
-    <ClInclude Include="inc\MemoryLeakCheck.h" />
+    <ClInclude Include="inc\DebugUtility.h" />
     <ClInclude Include="inc\MenuScene.h" />
     <ClInclude Include="inc\MenuSceneBackground.h" />
+    <ClInclude Include="inc\Monster.h" />
     <ClInclude Include="inc\MyTime.h" />
     <ClInclude Include="inc\Player.h" />
     <ClInclude Include="inc\PlayScene.h" />
@@ -147,7 +150,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Bullet.c" />
+    <ClCompile Include="src\CircleCollider.c" />
+    <ClCompile Include="src\Collision.c" />
     <ClCompile Include="src\ConsoleRenderer.c" />
+    <ClCompile Include="src\DebugUtility.c" />
     <ClCompile Include="src\EndScene.c" />
     <ClCompile Include="src\Game.c" />
     <ClCompile Include="src\Global.c" />
@@ -155,6 +161,7 @@
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\MenuScene.c" />
     <ClCompile Include="src\MenuSceneBackground.c" />
+    <ClCompile Include="src\Monster.c" />
     <ClCompile Include="src\MyTime.c" />
     <ClCompile Include="src\Player.c" />
     <ClCompile Include="src\PlayScene.c" />

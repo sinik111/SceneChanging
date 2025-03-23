@@ -1,7 +1,7 @@
-#include "MemoryLeakCheck.h"
 #include "Game.h"
 #include "MyTime.h"
 #include "Global.h"
+#include "DebugUtility.h"
 
 int main()
 {
@@ -16,6 +16,7 @@ int main()
 	{
 		UpdateGame();
 		RenderGame();
+		CHECK_FPS();
 		UpdateTime();
 	}
 

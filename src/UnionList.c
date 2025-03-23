@@ -1,18 +1,20 @@
 #include "UnionList.h"
 
 #include <stdlib.h>
-#include <stdio.h>
 #include <memory.h>
 
 #include "Types.h"
 #include "Global.h"
+#include "MenuSceneBackground.h"
+#include "Bullet.h"
+#include "DebugUtility.h"
 
 List* CreateList(DataType type)
 {
 	List* list = (List*)malloc(sizeof(List));
 	if (list == NULL)
 	{
-		DebugLog("리스트 생성에 실패했습니다");
+		DebugLog("리스트 생성에 실패했습니다. CreateList()\n");
 
 		return NULL;
 	}
@@ -28,7 +30,7 @@ void DeleteList(List* list)
 {
 	if (list == NULL)
 	{
-		DebugLog("DeleteList - 리스트가 NULL입니다");
+		DebugLog("리스트가 NULL입니다. DeleteList()\n");
 		return;
 	}
 
@@ -50,7 +52,7 @@ void Insert(List* list, void* data)
 {
 	if (list == NULL)
 	{
-		DebugLog("Insert - 리스트가 NULL입니다");
+		DebugLog("리스트가 NULL입니다. Insert()\n");
 
 		return;
 	}
@@ -58,7 +60,7 @@ void Insert(List* list, void* data)
 	Node* new_node = (Node*)malloc(sizeof(Node));
 	if (new_node == NULL)
 	{
-		DebugLog("Insert - 새 노드 할당에 실패했습니다");
+		DebugLog("새 노드 할당에 실패했습니다. Insert()\n");
 
 		return;
 	}
@@ -96,7 +98,7 @@ Node* Remove(List* list, long long id)
 {
 	if (list == NULL)
 	{
-		DebugLog("Remove - 리스트가 NULL입니다");
+		DebugLog("리스트가 NULL입니다. Remove()\n");
 
 		return NULL;
 	}
@@ -141,14 +143,14 @@ Node* RemoveNode(List* list, Node* previous, Node* remove)
 {
 	if (list == NULL)
 	{
-		DebugLog("RemoveNode - 리스트가 NULL입니다");
+		DebugLog("리스트가 NULL입니다. RemoveNode()\n");
 
 		return NULL;
 	}
 
 	if (remove == NULL)
 	{
-		DebugLog("RemoveNode - 지우려는 Node가 NULL입니다");
+		DebugLog("지우려는 Node가 NULL입니다. RemoveNode()\n");
 
 		return NULL;
 	}
@@ -178,7 +180,7 @@ void ClearList(List* list)
 {
 	if (list == NULL)
 	{
-		DebugLog("ClearList - 리스트가 NULL입니다");
+		DebugLog("리스트가 NULL입니다. ClearList()\n");
 
 		return;
 	}

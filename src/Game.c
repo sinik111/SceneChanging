@@ -1,8 +1,5 @@
 #include "Game.h"
 
-#include <stdio.h>
-#include <wchar.h>
-
 #include "ConsoleRenderer.h"
 #include "Input.h"
 #include "MenuScene.h"
@@ -15,14 +12,6 @@
 
 #define VK_ESCAPE         0x1B
 #define VK_SPACE          0x20
-
-#ifdef CHECK_FPS
-int frame_count = 0;
-float frame_timer = 0.0f;
-wchar_t fps_buffer[10] = { 0 };
-
-void CheckFPS();
-#endif
 
 Scene current_scene = NONE;
 Scene next_scene = NONE;
@@ -106,10 +95,6 @@ void RenderGame()
 
     RenderScene();
 
-#ifdef CHECK_FPS
-    CheckFPS();
-#endif
-
     ScreenFlipping();
 }
 
@@ -124,21 +109,3 @@ void ChangeScene(Scene scene)
 {
     next_scene = scene;
 }
-
-#ifdef CHECK_FPS
-void CheckFPS()
-{
-    ++frame_count;
-
-    frame_timer += DeltaTime();
-    if (frame_timer > 1.0f)
-    {
-        swprintf(fps_buffer, 10, L"%d", frame_count);
-
-        frame_timer -= 1.0f;
-        frame_count = 0;
-    }
-
-    ScreenDrawString(0, 0, fps_buffer, FG_YELLOW);
-}
-#endif

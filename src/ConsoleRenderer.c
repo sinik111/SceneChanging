@@ -1,7 +1,8 @@
 #include "ConsoleRenderer.h"
 
 #include <windows.h>
-#include <stdio.h>
+
+#include "DebugUtility.h"
 
 HANDLE hConsoleHandle;      // 초기 화면 콘솔의 핸들
 
@@ -70,13 +71,13 @@ BOOL ScreenDrawChar(int x, int y, wchar_t ch, WORD attr)
     bRval = FillConsoleOutputCharacterW(hScreenBuffer[nScreenBufferIndex], ch, 1, cdPos, &dwCharsWritten);
     if (bRval == FALSE)
     {
-        printf("Error, FillConsoleOutputCharacter()\n");
+        DebugLog("Error, FillConsoleOutputCharacter()\n");
     }
 
     bRval = FillConsoleOutputAttribute(hScreenBuffer[nScreenBufferIndex], attr, 1, cdPos, &dwCharsWritten);
     if (bRval == FALSE)
     {
-        printf("Error, FillConsoleOutputAttribute()\n");
+        DebugLog("Error, FillConsoleOutputAttribute()\n");
     }
 
     return bRval;
@@ -96,7 +97,7 @@ BOOL ScreenDrawString(int x, int y, const wchar_t* pStr, WORD attr)
     bRval = FillConsoleOutputAttribute(hScreenBuffer[nScreenBufferIndex], attr, nNumberOfBytesToWrite, cdPos, &dwCharsWritten);
     if (bRval == FALSE)
     {
-        printf("Error, FillConsoleOutputAttribute()\n");
+        DebugLog("Error, FillConsoleOutputAttribute()\n");
     }
 
     return bRval;
@@ -114,7 +115,7 @@ BOOL ScreenSetAttributes(WORD attr)
     bRval = FillConsoleOutputAttribute(hScreenBuffer[nScreenBufferIndex], attr, nScreenBufferSize, cdPos, &dwCharsWritten);
     if (bRval == FALSE)
     {
-        printf("Error, FillConsoleOutputCharacter()\n");
+        DebugLog("Error, FillConsoleOutputCharacter()\n");
         return bRval;
     }
 
