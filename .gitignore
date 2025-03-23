@@ -53,7 +53,5 @@ dkms.conf
 *.tlog
 *.log
 *.recipe
-/.vs/SceneChanging
-/SceneChanging/x64/Release
-*.json
-*.sqlite
+/.vs
+/SceneChanging
