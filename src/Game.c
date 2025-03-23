@@ -13,12 +13,12 @@
 #define VK_ESCAPE         0x1B
 #define VK_SPACE          0x20
 
-Scene current_scene = NONE;
-Scene next_scene = NONE;
+static Scene current_scene = NONE;
+static Scene next_scene = NONE;
 
-void (*UpdateScene)();
-void (*RenderScene)();
-void (*ReleaseScene)();
+static void (*UpdateScene)();
+static void (*RenderScene)();
+static void (*ReleaseScene)();
 
 void InitializeGame()
 {

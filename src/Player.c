@@ -16,10 +16,10 @@
 #define VK_RIGHT          0x27
 #define VK_DOWN           0x28
 
-List* player_bullet_list = NULL;
+static List* player_bullet_list = NULL;
 
-void Translate(Player* player);
-void Fire(Player* player);
+static void Translate(Player* player);
+static void Fire(Player* player);
 
 Player* CreatePlayer()
 {

@@ -3,8 +3,8 @@
 #include <windows.h> // GetAsyncKeyState »ç¿ë
 #include <memory.h>
 
-SHORT key_state[256] = { 0 };
-SHORT previous_key_state[256] = { 0 };
+static SHORT key_state[256] = { 0 };
+static SHORT previous_key_state[256] = { 0 };
 
 void UpdateInput()
 {

@@ -9,9 +9,9 @@
 #include "MyTime.h"
 
 // FPS Ãâ·Â
-int frame_count = 0;
-float frame_timer = 0.0f;
-char fps_buffer[30] = { 0 };
+static int frame_count = 0;
+static float frame_timer = 0.0f;
+static char fps_buffer[30] = { 0 };
 
 void __CheckFPS()
 {

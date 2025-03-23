@@ -6,8 +6,8 @@
 #include "Game.h"
 #include "MyTime.h"
 
-wchar_t end_data[10];
-float end_timer;
+static wchar_t end_data[10];
+static float end_timer;
 
 void InitializeEndScene()
 {

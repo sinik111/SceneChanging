@@ -2,10 +2,10 @@
 
 #include <windows.h>
 
-LARGE_INTEGER frequency;
-LARGE_INTEGER previous_counter;
+static LARGE_INTEGER frequency;
+static LARGE_INTEGER previous_counter;
 
-float delta_time = 0.f;
+static float delta_time = 0.f;
 
 void InitializeTime()
 {

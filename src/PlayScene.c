@@ -8,8 +8,8 @@
 #include "Player.h"
 #include "Types.h"
 
-Player* player = NULL;
-List* bullet_list = NULL;
+static Player* player = NULL;
+static List* bullet_list = NULL;
 
 void InitializePlayScene()
 {

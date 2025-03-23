@@ -4,13 +4,13 @@
 
 #include "DebugUtility.h"
 
-HANDLE hConsoleHandle;      // 초기 화면 콘솔의 핸들
+static HANDLE hConsoleHandle;      // 초기 화면 콘솔의 핸들
 
-int nScreenWidth = 0; // 콘솔창의 너비
-int nScreenHeight = 0; // 콘솔창의 높이
-int nScreenBufferSize = 0; // 콘솔창의 스크린버퍼 크기
-int nScreenBufferIndex = 0; // 콘솔창이 사용할 스크린버퍼의 인덱스
-HANDLE hScreenBuffer[2]; // 콘솔창이 사용할 스크린버퍼의 핸들
+static int nScreenWidth = 0; // 콘솔창의 너비
+static int nScreenHeight = 0; // 콘솔창의 높이
+static int nScreenBufferSize = 0; // 콘솔창의 스크린버퍼 크기
+static int nScreenBufferIndex = 0; // 콘솔창이 사용할 스크린버퍼의 인덱스
+static HANDLE hScreenBuffer[2]; // 콘솔창이 사용할 스크린버퍼의 핸들
 
 void ScreenInit()
 {
@@ -35,7 +35,6 @@ void ScreenInit()
     nScreenWidth = Info.srWindow.Right - Info.srWindow.Left + 1;
     nScreenBufferSize = nScreenWidth * nScreenHeight;
 }
-
 
 void ScreenFlipping()
 {
@@ -121,7 +120,6 @@ BOOL ScreenSetAttributes(WORD attr)
 
     return bRval;
 }
-
 
 int ScreenWidth()
 {

@@ -8,9 +8,9 @@
 #include "UnionList.h"
 #include "MyTime.h"
 
-wchar_t menu_data[5][25];
-List* msbg_list = NULL; // menu_scene_background_list
-float star_timer;
+static wchar_t menu_data[5][25];
+static List* msbg_list = NULL; // menu_scene_background_list
+static float star_timer;
 
 void InitializeMenuScene()
 {
