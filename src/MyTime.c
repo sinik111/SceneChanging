@@ -3,16 +3,16 @@
 #include <windows.h>
 
 LARGE_INTEGER frequency;
-LARGE_INTEGER prev_counter;
+LARGE_INTEGER previous_counter;
 
 float delta_time = 0.f;
 
 void InitializeTime()
 {
 	QueryPerformanceFrequency(&frequency);
-	QueryPerformanceCounter(&prev_counter);
+	QueryPerformanceCounter(&previous_counter);
 
-	srand((unsigned int)prev_counter.QuadPart);
+	srand((unsigned int)previous_counter.QuadPart);
 }
 
 void UpdateTime()
@@ -21,9 +21,9 @@ void UpdateTime()
 
 	QueryPerformanceCounter(&current_counter);
 
-	delta_time = (float)(current_counter.QuadPart - prev_counter.QuadPart) / frequency.QuadPart;
+	delta_time = (float)(current_counter.QuadPart - previous_counter.QuadPart) / frequency.QuadPart;
 
-	prev_counter = current_counter;
+	previous_counter = current_counter;
 }
 
 float DeltaTime()

@@ -39,15 +39,18 @@ void UpdateMenuScene()
 		Insert(msbg_list, &msbg);
 	}
 
+	Node* previous_node = NULL;
 	Node* current_node = msbg_list->head;
 	while (current_node != NULL)
 	{
-		if (REMOVE_MSBG == UpdateMenuSceneBackground(&current_node->data.msbg))
+		MSBGState state = UpdateMenuSceneBackground(&current_node->data.msbg);
+		if (REMOVE_MSBG == state)
 		{
-			current_node = Remove(msbg_list, current_node->data.id);
+			current_node = RemoveNode(msbg_list, previous_node, current_node);
 		}
 		else
 		{
+			previous_node = current_node;
 			current_node = current_node->next;
 		}
 	}

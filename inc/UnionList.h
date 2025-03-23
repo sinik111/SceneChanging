@@ -36,4 +36,6 @@ void Insert(List* list, void* data);
 
 Node* Remove(List* list, long long id);
 
+Node* RemoveNode(List* list, Node* previous, Node* remove);
+
 void ClearList(List* list);

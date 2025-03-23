@@ -5,13 +5,14 @@
 #include <memory.h>
 
 #include "Types.h"
+#include "Global.h"
 
 List* CreateList(DataType type)
 {
 	List* list = (List*)malloc(sizeof(List));
 	if (list == NULL)
 	{
-		printf("리스트 생성 실패");
+		DebugLog("리스트 생성에 실패했습니다");
 
 		return NULL;
 	}
@@ -27,6 +28,7 @@ void DeleteList(List* list)
 {
 	if (list == NULL)
 	{
+		DebugLog("DeleteList - 리스트가 NULL입니다");
 		return;
 	}
 
@@ -48,7 +50,7 @@ void Insert(List* list, void* data)
 {
 	if (list == NULL)
 	{
-		printf("리스트가 널입니다.");
+		DebugLog("Insert - 리스트가 NULL입니다");
 
 		return;
 	}
@@ -56,7 +58,7 @@ void Insert(List* list, void* data)
 	Node* new_node = (Node*)malloc(sizeof(Node));
 	if (new_node == NULL)
 	{
-		printf("새 노드 할당 실패");
+		DebugLog("Insert - 새 노드 할당에 실패했습니다");
 
 		return;
 	}
@@ -94,12 +96,12 @@ Node* Remove(List* list, long long id)
 {
 	if (list == NULL)
 	{
-		printf("리스트가 널입니다");
+		DebugLog("Remove - 리스트가 NULL입니다");
 
 		return NULL;
 	}
 
-	Node* prev_node = NULL;
+	Node* previous_node = NULL;
 	Node* current_node = list->head;
 
 	while (current_node != NULL)
@@ -109,13 +111,18 @@ Node* Remove(List* list, long long id)
 		{
 			Node* next_node;
 
-			if (prev_node != NULL)
+			if (previous_node != NULL)
 			{
-				next_node = prev_node->next = current_node->next;
+				next_node = previous_node->next = current_node->next;
 			}
 			else
 			{
 				next_node = list->head = current_node->next;
+			}
+
+			if (next_node == NULL)
+			{
+				list->tail = previous_node;
 			}
 
 			free(current_node);
@@ -123,18 +130,55 @@ Node* Remove(List* list, long long id)
 			return next_node; // 삭제 후에 순회할 수 있게 다음 노드 반환함
 		}
 
-		prev_node = current_node;
+		previous_node = current_node;
 		current_node = current_node->next;
 	}
 
 	return NULL;
 }
 
+Node* RemoveNode(List* list, Node* previous, Node* remove)
+{
+	if (list == NULL)
+	{
+		DebugLog("RemoveNode - 리스트가 NULL입니다");
+
+		return NULL;
+	}
+
+	if (remove == NULL)
+	{
+		DebugLog("RemoveNode - 지우려는 Node가 NULL입니다");
+
+		return NULL;
+	}
+
+	Node* next_node;
+
+	if (previous != NULL)
+	{
+		next_node = previous->next = remove->next;
+	}
+	else
+	{
+		next_node = list->head = remove->next;
+	}
+
+	if (next_node == NULL)
+	{
+		list->tail = previous;
+	}
+
+	free(remove);
+
+	return next_node; // 삭제 후에 순회할 수 있게 다음 노드 반환함
+}
+
 void ClearList(List* list)
 {
 	if (list == NULL)
 	{
-		printf("리스트가 널입니다");
+		DebugLog("ClearList - 리스트가 NULL입니다");
 
 		return;
 	}

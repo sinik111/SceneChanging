@@ -4,12 +4,12 @@
 #include <memory.h>
 
 SHORT key_state[256] = { 0 };
-SHORT prev_key_state[256] = { 0 };
+SHORT previous_key_state[256] = { 0 };
 
 void UpdateInput()
 {
     // 이전 상태 저장
-    memcpy_s(prev_key_state, sizeof(prev_key_state), key_state, sizeof(key_state));
+    memcpy_s(previous_key_state, sizeof(previous_key_state), key_state, sizeof(key_state));
 
     for (int i = 0; i < 256; ++i)
     {
@@ -26,11 +26,11 @@ BOOL IsKeyDown(int vKey)
 // 이번 루프에 키를 눌렀는지
 BOOL IsKeyPressed(int vKey)
 {
-    return (!(prev_key_state[vKey] & 0x8000) && (key_state[vKey] & 0x8000));
+    return (!(previous_key_state[vKey] & 0x8000) && (key_state[vKey] & 0x8000));
 }
 
 // 이번 루프에 키를 뗐는지
 BOOL IsKeyReleased(int vKey)
 {
-    return ((prev_key_state[vKey] & 0x8000) && !(key_state[vKey] & 0x8000));
+    return ((previous_key_state[vKey] & 0x8000) && !(key_state[vKey] & 0x8000));
 }

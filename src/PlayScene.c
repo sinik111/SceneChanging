@@ -22,16 +22,18 @@ void UpdatePlayScene()
 {
 	UpdatePlayer(player);
 	
+	Node* previous_node = NULL;
 	Node* current_node = bullet_list->head;
 	while (current_node != NULL)
 	{
 		UpdateBullet(&current_node->data.bullet);
 		if (current_node->data.bullet.timer < 0.0f)
 		{
-			current_node = Remove(bullet_list, current_node->data.id);
+			current_node = RemoveNode(bullet_list, previous_node, current_node);
 		}
 		else
 		{
+			previous_node = current_node;
 			current_node = current_node->next;
 		}
 	}
